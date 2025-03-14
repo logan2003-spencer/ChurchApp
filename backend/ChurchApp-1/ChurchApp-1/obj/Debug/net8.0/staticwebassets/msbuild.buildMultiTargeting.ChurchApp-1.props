@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\ChurchApp-1.props" />
+</Project>
