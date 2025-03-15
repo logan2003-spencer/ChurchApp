@@ -1,6 +1,7 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route, Link, useParams } from "react-router-dom";
 import Navbar from "./Navbar"; // Import Navbar component
+import HomeLanding from "./components/HomeLanding";
 
 export default function App() {
   return (
@@ -12,7 +13,7 @@ export default function App() {
           <Route path="/addEvent" element={<AddEvent />} />
           <Route path="/login" element={<Login />} />
           <Route path="/attendance/*" element={<Attendance />} />
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<HomeLanding />} />
         </Routes>
       </div>
     </Router>
