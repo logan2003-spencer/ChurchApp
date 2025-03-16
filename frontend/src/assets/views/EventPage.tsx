@@ -1,10 +1,10 @@
 "use client";
 
 import React from 'react';
-import StatusBar from './StatusBar';
-import NavigationBar from './NavigationBar';
-import EventCard from './EventCard';
-import { EventData } from './types';
+import StatusBar from '../components/StatusBar';
+import NavigationBar from '../components/NavigationBar';
+import EventCard from '../components/EventCard';
+import { EventData } from '../../types';
 
 const EventsPage: React.FC = () => {
   // Sample event data - in a real app, this would come from an API or props
