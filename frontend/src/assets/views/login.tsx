@@ -1,7 +1,10 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 
 const Login: React.FC = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
   return (
     <div className="flex flex-col items-center pb-96 mx-auto w-full bg-white bg-opacity-90 max-w-[480px]">
       <div className="self-stretch pt-5 w-full bg-white h-[37px]">
@@ -26,16 +29,22 @@ const Login: React.FC = () => {
 
       <div className="mt-48 ml-5 w-full max-w-[294px]">
         <label className="block text-base text-stone-900 mb-2">Name</label>
-        <div className="px-4 py-3 bg-white border border-zinc-300 rounded-lg">
-          <span>username</span>
-        </div>
+        <input
+          type="text"
+          className="px-4 py-3 bg-white border border-zinc-300 rounded-lg w-full"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
       </div>
 
       <div className="mt-14 ml-5 w-full max-w-[294px]">
         <label className="block text-base text-stone-900 mb-2">Password</label>
-        <div className="px-4 py-3 bg-white border border-zinc-300 rounded-lg">
-          <span>input password</span>
-        </div>
+        <input
+          type="password"
+          className="px-4 py-3 bg-white border border-zinc-300 rounded-lg w-full"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
       </div>
 
       <button
