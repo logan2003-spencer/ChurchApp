@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link, useParams } from "react-r
 import Navbar from "./Navbar"; // Import Navbar component
 import HomeLanding from "./components/HomeLanding";
 import {useState} from "react";
+import Events from "./Events";
 
 export default function App() {
   return (
@@ -25,9 +26,6 @@ function Home() {
   return <h2>Home</h2>;
 }
 
-function Events() {
-  return <h2>Events for the 1st Ward:</h2>;
-}
 
 function Login() {
   return <h2>Login</h2>;
