@@ -1,19 +1,9 @@
 
-import './App.css';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link,
-  useParams,
-} from 'react-router-dom';
 import Navbar from './Navbar'; // Import Navbar component
 import HomeLanding from './components/HomeLanding';
-=======
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route, Link, useParams } from "react-router-dom";
-import Navbar from "./Navbar"; // Import Navbar component
-import HomeLanding from "./components/HomeLanding";
+import EventSignUp from "./components/EventSignUp";
 import {useState} from "react";
 import Events from "./Events";
 
@@ -31,6 +21,8 @@ export default function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/attendance/*" element={<Attendance />} />
           <Route path="/" element={<HomeLanding />} />
+          <Route path="/eventSignUp" element={<EventSignUp />} />
+
         </Routes>
       </div>
     </Router>

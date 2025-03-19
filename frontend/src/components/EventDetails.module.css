@@ -1,0 +1,52 @@
+.eventDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 294px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 34px;
+}
+
+.title {
+  color: #000;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.subtitle {
+  color: #000;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.info {
+  width: 100%;
+}
+
+.infoSection {
+  margin-bottom: 24px;
+}
+
+.sectionTitle {
+  color: #353535;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0 0 8px;
+}
+
+.sectionContent {
+  color: #353535;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 140%;
+  margin: 0;
+}
