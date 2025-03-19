@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace ChurchApp_1.Models;
 
 public partial class User
 {
+    [Key]
     public int UserId { get; set; }
 
     public string FirstName { get; set; } = null!;

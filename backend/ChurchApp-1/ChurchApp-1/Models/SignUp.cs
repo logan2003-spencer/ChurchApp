@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace ChurchApp_1.Models;
 
 public partial class SignUp
 {
+    [Key]
+    public int SignUpId { get; set; }
     public int EventId { get; set; }
 
     public int UserId { get; set; }
