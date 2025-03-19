@@ -20,6 +20,7 @@ export default function Navbar() {
           <Link to="/attendance" onClick={() => setIsOpen(false)}>Attendance</Link>
           <Link to="/addEvent" onClick={() => setIsOpen(false)}>Add Event</Link>
           <Link to="/login" onClick={() => setIsOpen(false)}>Ward/Stake Login</Link>
+          <Link to="/eventSignUp" onClick={() => setIsOpen(false)}>Sign Up TEMPORARY</Link>
         </div>
       )}
     </nav>
