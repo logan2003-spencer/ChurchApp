@@ -1,0 +1,127 @@
+.homeLanding {
+  background-color: #fff;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 39px;
+  display: flex;
+  overflow: hidden;
+}
+
+
+.frame {
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  display: flex;
+}
+
+.time {
+  color: #000;
+  white-space: nowrap;
+  text-align: center;
+  flex: 1;
+  align-self: stretch;
+  gap: 10px;
+  margin: auto 0;
+  padding: 0 6px 0 16px;
+  font-family: SF Pro, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 17px;
+  font-weight: 590;
+  line-height: 1;
+}
+
+.dynamicIslandspacer {
+  flex-shrink: 0;
+  align-self: stretch;
+  width: 124px;
+  height: 10px;
+  margin: auto 0;
+  display: flex;
+}
+
+.levels {
+  flex: 1;
+  justify-content: center;
+  align-self: stretch;
+  align-items: center;
+  gap: 7px;
+  margin: auto 0;
+  padding: 0 16px 0 6px;
+  display: flex;
+}
+
+.img {
+  aspect-ratio: 1.58;
+  object-fit: contain;
+  object-position: center;
+  flex-shrink: 0;
+  align-self: stretch;
+  width: 19px;
+  margin: auto 0;
+}
+
+.img2 {
+  aspect-ratio: 1.42;
+  object-fit: contain;
+  object-position: center;
+  flex-shrink: 0;
+  align-self: stretch;
+  width: 17px;
+  margin: auto 0;
+}
+
+.div {
+  color: #fff;
+  width: 100%;
+  max-width: 271px;
+  margin-top: 40px;
+  font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.unitName {
+  color: #000;
+  text-align: center;
+  font-size: 48px;
+  font-weight: 500;
+}
+
+.stakeName {
+  color: #000;
+  text-align: center;
+  margin-top: 30px;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.longButton {
+  white-space: nowrap;
+  width: 100%;
+  margin-top: 30px;
+  line-height: 1.2;
+}
+
+.btnText {
+  background-color: #317da6;
+  border-radius: 8px;
+  align-self: stretch;
+  gap: 10px;
+  min-height: 45px;
+  width: 100%;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.img3 {
+  aspect-ratio: 0.5;
+  object-fit: contain;
+  object-position: center;
+  width: 94px;
+  margin-top: 40px;
+}
