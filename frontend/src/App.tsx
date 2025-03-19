@@ -1,12 +1,20 @@
-import "./App.css";
-import { BrowserRouter as Router, Routes, Route, Link, useParams } from "react-router-dom";
-import Navbar from "./Navbar"; // Import Navbar component
-import HomeLanding from "./components/HomeLanding";
+import './App.css';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  useParams,
+} from 'react-router-dom';
+import Navbar from './Navbar'; // Import Navbar component
+import HomeLanding from './components/HomeLanding';
 
 export default function App() {
   return (
     <Router>
-      <div className="pt-16"> {/* ✅ Push content down so it isn't covered by navbar */}
+      <div className="pt-16">
+        {' '}
+        {/* ✅ Push content down so it isn't covered by navbar */}
         <Navbar />
         <Routes>
           <Route path="/events" element={<Events />} />
