@@ -81,9 +81,9 @@ public partial class AttendanceContext : DbContext
 
             entity.HasOne(d => d.EventType).WithMany(p => p.Events)
                 .HasForeignKey(d => d.EventTypeId)
-                .OnDelete(DeleteBehavior.ClientSetNull);
+                .OnDelete(DeleteBehavior.SetNull);
 
-            entity.HasOne(d => d.Organization).WithMany(p => p.Events)
+                    entity.HasOne(d => d.Organization).WithMany(p => p.Events)
                 .HasForeignKey(d => d.OrganizationId)
                 .OnDelete(DeleteBehavior.ClientSetNull);
 

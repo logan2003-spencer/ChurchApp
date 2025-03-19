@@ -19,13 +19,13 @@ public partial class Event
 
     public DateTime EventEnd { get; set; }
 
-    public int EventTypeId { get; set; }
+    public int? EventTypeId { get; set; }
 
     public int UnitId { get; set; }
 
     public int OrganizationId { get; set; }
 
-    public virtual EventType EventType { get; set; } = null!;
+    public virtual EventType? EventType { get; set; } = null!;
 
     public virtual Organization Organization { get; set; } = null!;
 
