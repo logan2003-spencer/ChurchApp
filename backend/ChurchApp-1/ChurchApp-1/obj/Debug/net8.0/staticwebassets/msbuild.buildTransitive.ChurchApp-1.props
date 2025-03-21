@@ -1,3 +1,3 @@
 ﻿<Project>
-  <Import Project="..\buildMultiTargeting\ChurchApp-1.props" />
+  <Import Project="../buildMultiTargeting/ChurchApp-1.props" />
 </Project>

@@ -1,19 +1,30 @@
 import { useEffect, useState } from 'react';
+import { Event } from './types/event';
 
 function Events() {
-  const [events, setEvents] = useState([]);
+  const [events, setEvents] = useState<Event[]>([]);
   useEffect(() => {
-    fetch('/api/events')
+    fetch('http://localhost:5116/api/Event')
       .then((response) => response.json())
-      .then((data) => setEvents(data.events));
+      .then((data) => setEvents(data)); // Use data directly since it's already an array.
   }, []);
 
   return (
     <div>
-      <h2>Events for the 1st Ward:</h2>
+      <h2>Events for the 11st Ward:</h2>
       <ul>
-        {events.map((event: any) => (
-          <li key={event.id}>{event.name}</li>
+        {events.map((e) => (
+          <div id="projectCard" className="card">
+            <h3 className="card-title">{e.eventName}</h3>
+            <div className="card-body">
+              <ul className="list-unstyled">
+                <li>
+                  <strong>Event Description: </strong>
+                  {e.eventDesc}
+                </li>
+              </ul>
+            </div>
+          </div>
         ))}
       </ul>
     </div>
