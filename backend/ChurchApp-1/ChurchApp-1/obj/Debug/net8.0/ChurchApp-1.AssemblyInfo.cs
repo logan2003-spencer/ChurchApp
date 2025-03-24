@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ChurchApp-1")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+75605c1a4096f0602a14eff0ceec7e61af710d0a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+57f620d50a18ed0d82dde47c8f5bb3578cced646")]
 [assembly: System.Reflection.AssemblyProductAttribute("ChurchApp-1")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ChurchApp-1")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
