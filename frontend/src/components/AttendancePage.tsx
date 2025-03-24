@@ -11,6 +11,7 @@ function AttendancePage() {
   const [loadingUsers, setLoadingUsers] = useState(false);
 
   
+  
   // Fetch organizations on page load
   useEffect(() => {
     const fetchOrganizations = async () => {
