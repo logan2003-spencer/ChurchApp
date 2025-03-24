@@ -32,6 +32,33 @@ namespace ChurchApp_1.Controllers
                 return StatusCode(500, "An error occurred while retrieving users");
             }
         }
+        
+        [HttpGet("by-organization/{orgName}")]
+        public async Task<ActionResult<IEnumerable<object>>> GetUsersByOrganization(string orgName)
+        {
+            try
+            {
+                var users = await _context.Users
+                    .Include(u => u.Organization)
+                    .Where(u => u.Organization.OrganizationName.ToLower() == orgName.Replace("-", " ").ToLower())
+                    .Select(u => new {
+                        id = u.UserId,
+                        name = u.FirstName + " " + u.LastName
+                    })
+                    .ToListAsync();
+
+                if (!users.Any())
+                {
+                    return NotFound("No users found for this organization.");
+                }
+
+                return Ok(users);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "An error occurred while retrieving users by organization.");
+            }
+        }
 
     }
 }
