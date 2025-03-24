@@ -1,7 +1,7 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react"; 
-import "./Navbar.css"; // ✅ Import CSS file
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
+import './Navbar.css'; // ✅ Import CSS file
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,12 +15,24 @@ export default function Navbar() {
 
       {isOpen && (
         <div className="dropdown-menu">
-          <Link to="/" onClick={() => setIsOpen(false)}>Home</Link>
-          <Link to="/events" onClick={() => setIsOpen(false)}>Events</Link>
-          <Link to="/attendance" onClick={() => setIsOpen(false)}>Attendance</Link>
-          <Link to="/addEvent" onClick={() => setIsOpen(false)}>Add Event</Link>
-          <Link to="/login" onClick={() => setIsOpen(false)}>Ward/Stake Login</Link>
-          <Link to="/eventSignUp" onClick={() => setIsOpen(false)}>Sign Up TEMPORARY</Link>
+          <Link to="/" onClick={() => setIsOpen(false)}>
+            Home
+          </Link>
+          <Link to="/events" onClick={() => setIsOpen(false)}>
+            Events
+          </Link>
+          <Link to="/attendance" onClick={() => setIsOpen(false)}>
+            Attendance
+          </Link>
+          <Link to="/addEvent" onClick={() => setIsOpen(false)}>
+            Add Event
+          </Link>
+          <Link to="/login" onClick={() => setIsOpen(false)}>
+            Ward/Stake Login
+          </Link>
+          <Link to="/eventSignUp" onClick={() => setIsOpen(false)}>
+            Sign Up TEMPORARY
+          </Link>
         </div>
       )}
     </nav>

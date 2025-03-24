@@ -1,12 +1,17 @@
-
 import Navbar from './Navbar'; // Import Navbar component
 import HomeLanding from './components/HomeLanding';
-import "./App.css";
-import { BrowserRouter as Router, Routes, Route, Link, useParams } from "react-router-dom";
-import EventSignUp from "./components/EventSignUp";
-import {useState} from "react";
-import Events from "./Events";
-
+import './App.css';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  useParams,
+} from 'react-router-dom';
+import EventSignUp from './components/EventSignUp';
+import AttendancePage from './components/AttendancePage';
+import { useState } from 'react';
+import Events from './Events';
 
 export default function App() {
   return (
@@ -19,10 +24,9 @@ export default function App() {
           <Route path="/events" element={<Events />} />
           <Route path="/addEvent" element={<AddEvent />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/attendance/*" element={<Attendance />} />
+          <Route path="/attendance" element={<AttendancePage />} />{' '}
           <Route path="/" element={<HomeLanding />} />
           <Route path="/eventSignUp" element={<EventSignUp />} />
-
         </Routes>
       </div>
     </Router>
@@ -33,69 +37,94 @@ function Home() {
   return <h2>Home</h2>;
 }
 
-
 function Login() {
   return <h2>Login</h2>;
 }
 
 function AddEvent() {
   const [formData, setFormData] = useState({
-    eventName: "",
-    orgName: "",
-    detail: "",
-    date: "",
-    location: "",
+    eventName: '',
+    orgName: '',
+    detail: '',
+    date: '',
+    location: '',
   });
 
-  const handleChange = (e: { target: { name: any; value: any; }; }) => {
+  const handleChange = (e: { target: { name: any; value: any } }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-
-  const handleSubmit = (e: { preventDefault: () => void; }) => {
+  const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault(); // Prevents page reload
-    console.log("Form submitted:", formData);
+    console.log('Form submitted:', formData);
   };
 
-
   return (
-  <>
-  <h2>Add Event</h2>
-  <form onSubmit={handleSubmit}>
-      <label>
-        Event Name:
-        <input type="text" name="eventName" value={formData.eventName} onChange={handleChange} />
-      </label>
-      <br /><br />
+    <>
+      <h2>Add Event</h2>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Event Name:
+          <input
+            type="text"
+            name="eventName"
+            value={formData.eventName}
+            onChange={handleChange}
+          />
+        </label>
+        <br />
+        <br />
 
-      <label>
-        Organizer Name:
-        <input type="email" name="orgName" value={formData.orgName} onChange={handleChange} />
-      </label>
-      <br /><br />
+        <label>
+          Organizer Name:
+          <input
+            type="email"
+            name="orgName"
+            value={formData.orgName}
+            onChange={handleChange}
+          />
+        </label>
+        <br />
+        <br />
 
-      <label>
-        Event Details:
-        <textarea  name="detail" value={formData.detail} onChange={handleChange} />
-      </label>
-      <br /><br />
+        <label>
+          Event Details:
+          <textarea
+            name="detail"
+            value={formData.detail}
+            onChange={handleChange}
+          />
+        </label>
+        <br />
+        <br />
 
-      <label>
-        Date & Time:
-        <input type="datetime-local" name="date" value={formData.date} onChange={handleChange} />
-      </label>
-      <br /><br />
+        <label>
+          Date & Time:
+          <input
+            type="datetime-local"
+            name="date"
+            value={formData.date}
+            onChange={handleChange}
+          />
+        </label>
+        <br />
+        <br />
 
-      <label>
-        Location:
-        <input type="text" name="location" value={formData.location} onChange={handleChange} />
-      </label>
-      <br /><br />
+        <label>
+          Location:
+          <input
+            type="text"
+            name="location"
+            value={formData.location}
+            onChange={handleChange}
+          />
+        </label>
+        <br />
+        <br />
 
-      <button type="submit">Submit</button>
-    </form>
-  
-  </>
+        <button type="submit">Submit</button>
+      </form>
+    </>
   );
 }
 
