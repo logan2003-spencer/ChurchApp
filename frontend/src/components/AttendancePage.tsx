@@ -82,7 +82,7 @@ function AttendancePage() {
           </label>
           <select
             id="organization"
-            className="w-full border p-2 rounded"
+            style={{ width: '100%', border: '1px solid #ccc', padding: '10px', borderRadius: '8px' }}
             value={selectedOrg}
             onChange={(e) => setSelectedOrg(e.target.value)}
           >
@@ -121,15 +121,18 @@ function AttendancePage() {
                 {students.map((student) => (
                   <li
                     key={student.id}
-                    // Force horizontal layout so checkbox & name stay side by side
                     style={{
                       display: 'flex',
                       flexDirection: 'row',
                       alignItems: 'center',
-                      gap: '0.75rem',
+                      gap: '10px',
                       width: '100%',
+                      padding: '10px',
+                      border: '1px solid #ccc',
+                      borderRadius: '8px',
+                      marginBottom: '10px',
+                      background: 'rgba(49, 125, 166, 0.18)'
                     }}
-                    className="p-2 border rounded"
                   >
                     <div style={{ width: '24px', flexShrink: 0 }}>
                       <input
@@ -139,7 +142,18 @@ function AttendancePage() {
                         style={{ width: '20px', height: '20px' }}
                       />
                     </div>
-                    <div style={{ textAlign: 'left', flex: 1 }}>
+                    <div
+                      style={{
+                        textAlign: 'left',
+                        flex: 1,
+                        color: 'black',
+                        fontSize: '20px',
+                        fontFamily: 'Inter',
+                        fontWeight: '400',
+                        lineHeight: 2,
+                        wordWrap: 'break-word'
+                      }}
+                    >
                       {student.name}
                     </div>
                   </li>
