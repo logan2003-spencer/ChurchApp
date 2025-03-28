@@ -3,10 +3,16 @@ import { useEffect, useState } from 'react';
 import { User } from '../types/User';
 import { Organization } from '../types/Organization';
 
+// Extended User type to include organization
+interface AttendanceUser extends User {
+  attended: boolean;
+  orgName: string;
+}
+
 function AttendancePage() {
   const [organizations, setOrganizations] = useState<Organization[]>([]);
   const [selectedOrg, setSelectedOrg] = useState<string>('');
-  const [students, setStudents] = useState<User[]>([]);
+  const [students, setStudents] = useState<AttendanceUser[]>([]);
   const [loadingOrgs, setLoadingOrgs] = useState(true);
   const [loadingUsers, setLoadingUsers] = useState(false);
 
@@ -36,12 +42,26 @@ function AttendancePage() {
             `http://localhost:5116/api/user/by-organization/${selectedOrg}`
           );
           const data = await res.json();
-          // Convert to your desired shape
-          const withAttendance = data.map((user: any) => ({
-            id: user.id,
-            name: user.name,
-            attended: false,
-          }));
+          
+          // Retrieve saved attendance for this organization
+          const savedAttendance = JSON.parse(
+            localStorage.getItem(`attendance-${selectedOrg}`) || '[]'
+          );
+
+          // Map users with saved attendance status
+          const withAttendance = data.map((user: any) => {
+            const savedUserAttendance = savedAttendance.find(
+              (savedUser: AttendanceUser) => savedUser.id === user.id
+            );
+            
+            return {
+              id: user.id,
+              name: user.name,
+              attended: savedUserAttendance ? savedUserAttendance.attended : false,
+              orgName: selectedOrg
+            };
+          });
+
           setStudents(withAttendance);
         } catch (err) {
           console.error('Error fetching users:', err);
@@ -54,19 +74,24 @@ function AttendancePage() {
     }
   }, [selectedOrg]);
 
-  // Toggle the attendance checkbox
+  // Toggle the attendance checkbox and save to local storage
   const toggleAttendance = (id: number) => {
-    setStudents((prev) =>
-      prev.map((student) =>
-        student.id === id
-          ? { ...student, attended: !student.attended }
-          : student
-      )
+    const updatedStudents = students.map((student) =>
+      student.id === id
+        ? { ...student, attended: !student.attended }
+        : student
+    );
+    
+    setStudents(updatedStudents);
+
+    // Save attendance to local storage for this organization
+    localStorage.setItem(
+      `attendance-${selectedOrg}`, 
+      JSON.stringify(updatedStudents)
     );
   };
 
   return (
-    // The parent container centers content (max width 48rem) if screen is wide
     <div className="max-w-xl mx-auto p-6">
       <h1 className="text-3xl font-bold mb-6 text-center">
         Attendance Tracker
@@ -75,7 +100,6 @@ function AttendancePage() {
       {loadingOrgs ? (
         <p className="text-center text-gray-500">Loading organizations...</p>
       ) : (
-        // The dropdown container is left-aligned in this parent
         <div className="mb-6 w-full max-w-md">
           <label htmlFor="organization" className="block font-semibold mb-2">
             Select a class/organization:
@@ -108,7 +132,6 @@ function AttendancePage() {
           {loadingUsers ? (
             <p className="text-center text-gray-500">Loading users...</p>
           ) : students.length > 0 ? (
-            // The list container is left-aligned in this parent
             <div className="w-full max-w-md">
               <ul
                 className="space-y-3"
