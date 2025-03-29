@@ -9,9 +9,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="57f8f231-0110-4ffa-bdbb-58150b24a6d8" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/.idea.ChurchApp-1/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/.idea.ChurchApp-1/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ChurchApp-1.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ChurchApp-1.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/attendance.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/attendance.sqlite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/ChurchApp-1" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/ChurchApp-1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/ChurchApp-1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/ChurchApp-1.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/ChurchApp-1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/ChurchApp-1.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/ChurchApp-1.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/ChurchApp-1.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/ChurchApp-1.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/obj/ChurchApp-1.csproj.nuget.g.props" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/ChurchApp-1.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/ChurchApp-1.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/ChurchApp-1.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/ChurchApp-1.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/ChurchApp-1.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/ChurchApp-1.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/ChurchApp-1.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/ChurchApp-1.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/ChurchApp-1.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/ChurchApp-1.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/ChurchApp-1.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/ChurchApp-1.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/ChurchApp-1.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/ChurchApp-1.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/ChurchApp-1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/ChurchApp-1.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/ChurchApp-1.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/ChurchApp-1.genruntimeconfig.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/ChurchApp-1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/ChurchApp-1.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/ChurchApp-1.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/ChurchApp-1.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/apphost" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/apphost" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/ref/ChurchApp-1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/ref/ChurchApp-1.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/refint/ChurchApp-1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/refint/ChurchApp-1.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.nuget.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,21 +48,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "jnewell-7"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;jnewell-7&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
     "url": "https://github.com/logan2003-spencer/ChurchApp.git",
-    "accountId": "5ba131bb-cc25-45d0-8e59-d1d0cca0a05c"
+    "accountId": "e70ea0e3-a4ec-4c3b-882b-61d5ee7d7125"
   }
 }]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2ulddp2JBBlgowp9UclUwLP26FB" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -48,7 +72,8 @@
   "keyToString": {
     ".NET Launch Settings Profile.ChurchApp-1: http.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Jackson-Branch",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -98,6 +123,7 @@
       <option name="presentableId" value="Default" />
       <updated>1742827186197</updated>
       <workItem from="1742827187995" duration="6588000" />
+      <workItem from="1743119882409" duration="3389000" />
     </task>
     <servers />
   </component>
