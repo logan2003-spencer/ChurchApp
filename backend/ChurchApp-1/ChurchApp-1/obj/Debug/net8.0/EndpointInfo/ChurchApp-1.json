@@ -41,6 +41,35 @@
             }
           }
         }
+      },
+      "post": {
+        "tags": [
+          "Event"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Event"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Event"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Event"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     },
     "/api/Event/{id}": {
@@ -177,45 +206,6 @@
           }
         }
       }
-    },
-    "/WeatherForecast": {
-      "get": {
-        "tags": [
-          "WeatherForecast"
-        ],
-        "operationId": "GetWeatherForecast",
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
-                  }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
     }
   },
   "components": {
@@ -270,56 +260,6 @@
           "eventEnd": {
             "type": "string",
             "format": "date-time"
-          },
-          "eventTypeId": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "unitId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "organizationId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "eventType": {
-            "$ref": "#/components/schemas/EventType"
-          },
-          "organization": {
-            "$ref": "#/components/schemas/Organization"
-          },
-          "signUps": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SignUp"
-            },
-            "nullable": true
-          },
-          "unit": {
-            "$ref": "#/components/schemas/Unit"
-          }
-        },
-        "additionalProperties": false
-      },
-      "EventType": {
-        "type": "object",
-        "properties": {
-          "eventTypeId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "eventTypeName": {
-            "type": "string",
-            "nullable": true
-          },
-          "events": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Event"
-            },
-            "nullable": true
           }
         },
         "additionalProperties": false
@@ -359,13 +299,6 @@
             "type": "string",
             "nullable": true
           },
-          "events": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Event"
-            },
-            "nullable": true
-          },
           "users": {
             "type": "array",
             "items": {
@@ -373,12 +306,12 @@
             },
             "nullable": true
           },
-          "unitId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "unit": {
-            "$ref": "#/components/schemas/Unit"
+          "usersNavigation": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/User"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -450,24 +383,10 @@
             "type": "string",
             "nullable": true
           },
-          "events": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Event"
-            },
-            "nullable": true
-          },
           "families": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Family"
-            },
-            "nullable": true
-          },
-          "organizations": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Organization"
             },
             "nullable": true
           }
@@ -543,29 +462,6 @@
             "items": {
               "$ref": "#/components/schemas/Organization"
             },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "WeatherForecast": {
-        "type": "object",
-        "properties": {
-          "date": {
-            "type": "string",
-            "format": "date"
-          },
-          "temperatureC": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "temperatureF": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "summary": {
-            "type": "string",
             "nullable": true
           }
         },

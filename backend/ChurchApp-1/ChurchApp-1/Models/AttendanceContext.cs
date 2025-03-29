@@ -34,7 +34,7 @@ public partial class AttendanceContext : DbContext
     public virtual DbSet<User> Users { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlite("Data Source=attendance.sqlite");
+        => optionsBuilder.UseSqlite("DataSource=attendance.sqlite");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -54,9 +54,7 @@ public partial class AttendanceContext : DbContext
         {
             entity.ToTable("events");
 
-            entity.Property(e => e.EventId)
-                .ValueGeneratedNever()
-                .HasColumnName("event_id");
+            entity.Property(e => e.EventId).HasColumnName("event_id");
             entity.Property(e => e.EventAddress)
                 .HasColumnType("VARCHAR(255)")
                 .HasColumnName("event_address");
@@ -72,51 +70,11 @@ public partial class AttendanceContext : DbContext
             entity.Property(e => e.EventStart)
                 .HasColumnType("DATETIME")
                 .HasColumnName("event_start");
-            entity.Property(e => e.EventTypeId).HasColumnName("event_type_id");
             entity.Property(e => e.IsAttendance)
                 .HasColumnType("BOOLEAN")
                 .HasColumnName("is_attendance");
-            entity.Property(e => e.OrganizationId).HasColumnName("organization_id");
-            entity.Property(e => e.UnitId).HasColumnName("unit_id");
-
-            entity.HasOne(d => d.EventType).WithMany(p => p.Events)
-                .HasForeignKey(d => d.EventTypeId)
-                .OnDelete(DeleteBehavior.SetNull);
-
-                    entity.HasOne(d => d.Organization).WithMany(p => p.Events)
-                .HasForeignKey(d => d.OrganizationId)
-                .OnDelete(DeleteBehavior.ClientSetNull);
-
-            entity.HasOne(d => d.Unit).WithMany(p => p.Events)
-                .HasForeignKey(d => d.UnitId)
-                .OnDelete(DeleteBehavior.ClientSetNull);
         });
 
-        modelBuilder.Entity<EventType>(entity =>
-        {
-            entity.ToTable("event_types");
-
-            entity.Property(e => e.EventTypeId)
-                .ValueGeneratedNever()
-                .HasColumnName("event_type_id");
-            entity.Property(e => e.EventTypeName)
-                .HasColumnType("VARCHAR(255)")
-                .HasColumnName("event_type_name");
-        });
-
-        modelBuilder.Entity<Family>(entity =>
-        {
-            entity.ToTable("family");
-
-            entity.Property(e => e.FamilyId)
-                .ValueGeneratedNever()
-                .HasColumnName("family_id");
-            entity.Property(e => e.UnitId).HasColumnName("unit_id");
-
-            entity.HasOne(d => d.Unit).WithMany(p => p.Families)
-                .HasForeignKey(d => d.UnitId)
-                .OnDelete(DeleteBehavior.ClientSetNull);
-        });
 
         modelBuilder.Entity<Organization>(entity =>
         {
@@ -128,30 +86,23 @@ public partial class AttendanceContext : DbContext
             entity.Property(e => e.OrganizationName)
                 .HasColumnType("VARCHAR(255)")
                 .HasColumnName("organization_name");
-            entity.Property(e => e.UnitId).HasColumnName("unit_id");
 
-            entity.HasOne(d => d.Unit).WithMany(p => p.Organizations)
-                .HasForeignKey(d => d.UnitId)
-                .OnDelete(DeleteBehavior.ClientSetNull);
-
-            // This is related to the commented out code in the Organization class, pretty sure it's not needed
-
-            //entity.HasMany(d => d.UsersNavigation).WithMany(p => p.Organizations)
-            //    .UsingEntity<Dictionary<string, object>>(
-            //        "UserOrg",
-            //        r => r.HasOne<User>().WithMany()
-            //            .HasForeignKey("UserId")
-            //            .OnDelete(DeleteBehavior.ClientSetNull),
-            //        l => l.HasOne<Organization>().WithMany()
-            //            .HasForeignKey("OrganizationId")
-            //            .OnDelete(DeleteBehavior.ClientSetNull),
-            //        j =>
-            //        {
-            //            j.HasKey("OrganizationId", "UserId");
-            //            j.ToTable("user_org");
-            //            j.IndexerProperty<int>("OrganizationId").HasColumnName("organization_id");
-            //            j.IndexerProperty<int>("UserId").HasColumnName("user_id");
-            //        });
+            entity.HasMany(d => d.UsersNavigation).WithMany(p => p.Organizations)
+                .UsingEntity<Dictionary<string, object>>(
+                    "UserOrg",
+                    r => r.HasOne<User>().WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.ClientSetNull),
+                    l => l.HasOne<Organization>().WithMany()
+                        .HasForeignKey("OrganizationId")
+                        .OnDelete(DeleteBehavior.ClientSetNull),
+                    j =>
+                    {
+                        j.HasKey("OrganizationId", "UserId");
+                        j.ToTable("user_org");
+                        j.IndexerProperty<int>("OrganizationId").HasColumnName("organization_id");
+                        j.IndexerProperty<int>("UserId").HasColumnName("user_id");
+                    });
         });
 
         modelBuilder.Entity<Role>(entity =>
@@ -186,9 +137,9 @@ public partial class AttendanceContext : DbContext
                 .HasForeignKey(d => d.AttendanceStatusId)
                 .OnDelete(DeleteBehavior.ClientSetNull);
 
-            entity.HasOne(d => d.Event).WithMany(p => p.SignUps)
-                .HasForeignKey(d => d.EventId)
-                .OnDelete(DeleteBehavior.ClientSetNull);
+            //entity.HasOne(d => d.Event).WithMany(p => p.SignUps)
+            //    .HasForeignKey(d => d.EventId)
+            //    .OnDelete(DeleteBehavior.ClientSetNull);
 
             entity.HasOne(d => d.User).WithMany(p => p.SignUps)
                 .HasForeignKey(d => d.UserId)

@@ -10,9 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@types/react-datepicker": "^6.2.0",
     "bootstrap": "^5.3.3",
+    "dayjs": "^1.11.13",
     "lucide-react": "^0.479.0",
     "react": "^19.0.0",
+    "react-datepicker": "^8.2.1",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.3.0"
   },

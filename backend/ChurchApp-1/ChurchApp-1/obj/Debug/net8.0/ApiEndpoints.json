@@ -21,6 +21,22 @@
   },
   {
     "ContainingType": "ChurchApp_1.Controllers.EventController",
+    "Method": "CreateEvent",
+    "RelativePath": "api/Event",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "newEvent",
+        "Type": "ChurchApp_1.Models.Event",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ChurchApp_1.Controllers.EventController",
     "Method": "DeleteEvent",
     "RelativePath": "api/Event/{id}",
     "HttpMethod": "DELETE",
@@ -100,26 +116,5 @@
         "StatusCode": 200
       }
     ]
-  },
-  {
-    "ContainingType": "ChurchApp_1.Controllers.WeatherForecastController",
-    "Method": "Get",
-    "RelativePath": "WeatherForecast",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[ChurchApp_1.WeatherForecast, ChurchApp-1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ],
-    "EndpointName": "GetWeatherForecast"
   }
 ]
