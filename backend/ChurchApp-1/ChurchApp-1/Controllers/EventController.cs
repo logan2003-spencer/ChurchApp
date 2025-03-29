@@ -32,6 +32,19 @@ namespace ChurchApp_1.Controllers
                 return StatusCode(500, $"Internal server error: {ex.Message}");
             }
         }
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteEvent(int id)
+        {
+            var eventToDelete = await _context.Events.FindAsync(id);
+            if (eventToDelete == null)
+            {
+                return NotFound($"Event with ID {id} not found.");
+            }
 
+            _context.Events.Remove(eventToDelete);
+            await _context.SaveChangesAsync();
+
+            return NoContent(); // 204 No Content means successful deletion
+        }
     }
 }
