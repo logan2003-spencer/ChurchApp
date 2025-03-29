@@ -9,6 +9,26 @@ function Events() {
       .then((data) => setEvents(data)); // Use data directly since it's already an array.
   }, []);
 
+
+  const handleDelete = (eventId: number) => {
+    setEvents((prevEvents) => prevEvents.filter((e) => e.eventId !== eventId)); // Remove from state immediately
+  
+    fetch(`http://localhost:5116/api/Event/${eventId}`, {
+      method: 'DELETE',
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to delete event");
+        }
+        console.log("Event deleted successfully");
+      })
+      .catch((error) => {
+        console.error("Error deleting event:", error);
+        // (Optional) Re-add the event if the request failed
+      });
+  };
+  
+
   return (
     <div>
       <br />
@@ -131,7 +151,20 @@ function Events() {
               Sign Up
             </button>
           </div>
+          <button
+    onClick={() => handleDelete(e.eventId)} // DELETE EVENT on Click
+    style={{
+      backgroundColor: 'red',
+      color: 'white',
+      border: 'none',
+      padding: '10px',
+      borderRadius: '8px',
+    }}
+  >
+    Delete
+  </button>
         </div>
+
       ))}
     </div>
   );
