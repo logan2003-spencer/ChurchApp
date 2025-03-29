@@ -60,5 +60,37 @@ namespace ChurchApp_1.Controllers
             }
         }
 
+     {
+        private readonly AttendanceContext _context;
+        public AttendanceController(AttendanceContext context)
+        {
+            _context = context;
+        }
+        // POST: api/Attendance
+        [HttpPost]
+        public async Task<ActionResult<AttendanceStatus>> CreateAttendance([FromBody] AttendanceStatus attendance)
+        {
+            if (attendance == null)
+            {
+                return BadRequest("Attendance data is invalid.");
+            }
+            // Add the new attendance record to the database
+            _context.AttendanceStatuses.Add(attendance);
+            await _context.SaveChangesAsync();
+            // Return the created attendance record
+            return CreatedAtAction(nameof(GetAttendanceById), new { id = attendance.Id }, attendance);
+        }
+        // You should also have a GET method to retrieve attendance by ID
+        [HttpGet("{id}")]
+        public async Task<ActionResult<AttendanceStatus>> GetAttendanceById(int id)
+        {
+            var attendance = await _context.AttendanceStatuses.FindAsync(id);
+            if (attendance == null)
+            {
+                return NotFound();
+            }
+            return Ok(attendance);
+        }
+    }
     }
 }
