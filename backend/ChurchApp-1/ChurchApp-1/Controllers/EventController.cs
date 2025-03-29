@@ -19,7 +19,8 @@ namespace ChurchApp_1.Controllers
         {
             try
             {
-                var events = await _context.Events.ToListAsync();
+                var events = await _context.Events
+                    .Where(e => e.IsAttendance == false).ToListAsync();
                 if (!events.Any())
                 {
                     return NotFound("No events found in the database.");
