@@ -27,12 +27,12 @@ export default function Navbar() {
           <Link to="/addEvent" onClick={() => setIsOpen(false)}>
             Add Event
           </Link>
-          <Link to="/login" onClick={() => setIsOpen(false)}>
+          {/* <Link to="/login" onClick={() => setIsOpen(false)}>
             Ward/Stake Login
           </Link>
           <Link to="/eventSignUp" onClick={() => setIsOpen(false)}>
             Sign Up TEMPORARY
-          </Link>
+          </Link> */}
         </div>
       )}
     </nav>
