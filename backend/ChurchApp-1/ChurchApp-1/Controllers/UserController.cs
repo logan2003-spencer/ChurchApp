@@ -32,7 +32,7 @@ namespace ChurchApp_1.Controllers
                 return StatusCode(500, "An error occurred while retrieving users");
             }
         }
-        
+
         [HttpGet("by-organization/{orgName}")]
         public async Task<ActionResult<IEnumerable<object>>> GetUsersByOrganization(string orgName)
         {

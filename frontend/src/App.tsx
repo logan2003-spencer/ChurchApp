@@ -12,6 +12,7 @@ import EventSignUp from './components/EventSignUp';
 import AttendancePage from './components/AttendancePage';
 import { useState } from 'react';
 import Events from './Events';
+import EventRequestForm from './components/EventRequestForm';
 
 export default function App() {
   return (
@@ -22,7 +23,7 @@ export default function App() {
         <Navbar />
         <Routes>
           <Route path="/events" element={<Events />} />
-          <Route path="/addEvent" element={<AddEvent />} />
+          <Route path="/addEvent" element={<EventRequestForm />} />
           <Route path="/login" element={<Login />} />
           <Route path="/attendance" element={<AttendancePage />} />{' '}
           <Route path="/" element={<HomeLanding />} />

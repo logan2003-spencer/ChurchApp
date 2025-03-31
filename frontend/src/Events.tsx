@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Event } from './types/event';
+import { ActionButton } from './components/ActionButton';
+import styles from './components/HomeLanding.module.css';
 
 function Events() {
   const [events, setEvents] = useState<Event[]>([]);
@@ -9,31 +11,29 @@ function Events() {
       .then((data) => setEvents(data)); // Use data directly since it's already an array.
   }, []);
 
-
   const handleDelete = (eventId: number) => {
     setEvents((prevEvents) => prevEvents.filter((e) => e.eventId !== eventId)); // Remove from state immediately
-  
+
     fetch(`http://localhost:5116/api/Event/${eventId}`, {
       method: 'DELETE',
     })
       .then((response) => {
         if (!response.ok) {
-          throw new Error("Failed to delete event");
+          throw new Error('Failed to delete event');
         }
-        console.log("Event deleted successfully");
+        console.log('Event deleted successfully');
       })
       .catch((error) => {
-        console.error("Error deleting event:", error);
+        console.error('Error deleting event:', error);
         // (Optional) Re-add the event if the request failed
       });
   };
-  
 
   return (
     <div>
       <br />
       <br />
-      <h2>Events for the 11st Ward:</h2>
+      <h2>Events for the 11th Ward:</h2>
       {events.map((e) => (
         <div
           key={e.eventId}
@@ -43,8 +43,6 @@ function Events() {
             padding: '10px',
             display: 'flex',
             flexDirection: 'column',
-            border: '1px solid #ccc',
-            borderRadius: '8px',
           }}
         >
           <div
@@ -64,7 +62,8 @@ function Events() {
                 wordWrap: 'break-word',
               }}
             >
-              <strong>Event Name: </strong> <br />{e.eventName}
+              <strong>Event Name: </strong> <br />
+              {e.eventName}
             </div>
             <div
               style={{
@@ -114,8 +113,7 @@ function Events() {
 
                 return (
                   <>
-                    {startDateStr} {startTimeStr} to{' '}
-                    {endTimeStr}
+                    {startDateStr} {startTimeStr} to {endTimeStr}
                   </>
                 );
               })()}{' '}
@@ -128,43 +126,42 @@ function Events() {
               justifyContent: 'center',
             }}
           >
-            <button
+            <ActionButton
+              label="Edit Event"
+              className={styles.btnText}
+              to="/"
+            />
+            {/* <button
               style={{
                 background: '#317DA6',
                 color: 'white',
                 padding: '10px',
                 borderRadius: '8px',
                 border: 'none',
-              }}
-            >
-              Edit Sign Up
-            </button>
-            <button
-              style={{
-                background: '#317DA6',
-                color: 'white',
-                padding: '10px',
-                borderRadius: '8px',
-                border: 'none',
+                gap: '10px',
               }}
             >
               Sign Up
-            </button>
+            </button> */}
           </div>
           <button
-    onClick={() => handleDelete(e.eventId)} // DELETE EVENT on Click
-    style={{
-      backgroundColor: 'red',
-      color: 'white',
-      border: 'none',
-      padding: '10px',
-      borderRadius: '8px',
-    }}
-  >
-    Delete
-  </button>
+            onClick={() => handleDelete(e.eventId)} // DELETE EVENT on Click
+            style={{
+              backgroundColor: '#317da6',
+              borderRadius: '8px',
+              alignSelf: 'stretch',
+              gap: '10px',
+              minHeight: '45px',
+              width: '100%',
+              border: 'none',
+              color: '#fff',
+              cursor: 'pointer',
+              marginTop: '10pt',
+            }}
+          >
+            Delete
+          </button>
         </div>
-
       ))}
     </div>
   );
