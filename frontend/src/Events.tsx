@@ -111,9 +111,14 @@ function Events() {
                 );
                 const endTimeStr = end.toLocaleTimeString('en-US', timeOptions);
 
+                const endDateStr = start.toLocaleDateString(
+                  'en-US',
+                  dateOptions
+                );
+
                 return (
                   <>
-                    {startDateStr} {startTimeStr} to {endTimeStr}
+                    {startDateStr} {startTimeStr} to {endDateStr} {endTimeStr}
                   </>
                 );
               })()}{' '}
@@ -126,11 +131,11 @@ function Events() {
               justifyContent: 'center',
             }}
           >
-            <ActionButton
+            {/* <ActionButton
               label="Edit Event"
               className={styles.btnText}
               to="/"
-            />
+            /> */}
             {/* <button
               style={{
                 background: '#317DA6',

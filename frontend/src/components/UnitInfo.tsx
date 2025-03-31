@@ -19,11 +19,11 @@ export const UnitInfo: React.FC = () => {
           className={styles.btnText}
           to="/addEvent"
         />
-        <ActionButton
+        {/* <ActionButton
           label="Ward/Stake Login"
           className={styles.btnText}
           to="/login"
-        />
+        /> */}
       </nav>
     </section>
   );
